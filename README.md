@@ -6,14 +6,23 @@ EcoConsciente
 Projeto desenvolvido para promover a conscientização ambiental através de conteúdos educativos e ferramentas interativas.
 
 Funcionalidades
+
 -Informações sobre biodiversidade
+
 -Sustentabilidade e preservação ambiental
+
 -Explicação do ciclo do carbono
+
 -Conteúdo sobre ecossistemas aquáticos
+
 -Calculadora de emissão de carbono
+
 -Calculadora para análise de impacto ambiental empresarial
+
 -Animações e efeitos visuais
+
 -Interface responsiva
+
 **Tecnologias Utilizadas**
 *HTML5*
 *CSS3*
