@@ -24,9 +24,11 @@ Funcionalidades
 -Interface responsiva
 
 **Tecnologias Utilizadas**
+
 *HTML5*
 *CSS3*
 *JavaScript*
+
 Objetivo
 
 Conscientizar usuários sobre questões ambientais e demonstrar, de forma visual e interativa, a importância da preservação dos recursos naturais e da redução dos impactos ambientais.
