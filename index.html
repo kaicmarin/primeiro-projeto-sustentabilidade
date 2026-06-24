@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbono: Calcule Sua Pegada</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#sobre">Home</a></li>
+            <li><a href="#calculadora">Calcule a pegada</a></li>
+            <li><a href="#ciclo">Ciclo do Carbono</a></li>
+            <li><a href="#impacto">Entenda o impacto Ambiental</a></li>
+            <li><a href="#acoes">Conheça as ações Sustentáveis!</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="sobre">
+            <h2>Sobre o Carbono</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>O que é Carbono?</h3>
+                    <p>O carbono é um elemento químico fundamental para a vida na Terra. É o quarto elemento mais abundante no universo e está presente em todas as formas de vida conhecidas.</p>
+                    <img src="imagens/Representação artística de um átomo de carbono_300x300xQw9HFhCURwL3TrdJlx8c0bd590bc585.jpg" alt="Representação artística de um átomo de carbono" width="300" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Propriedades do Carbono</h3>
+                    <ul>
+                        <li>Número atômico: 6</li>
+                        <li>Massa atômica: 12,0107 u</li>
+                        <li>Configuração eletrônica: 1s² 2s² 2p²</li>
+                        <li>Capacidade de formar até quatro ligações covalentes</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Formas Alotrópicas</h3>
+                    <p>O carbono pode existir em várias formas alotrópicas, incluindo:</p>
+                    <ul>
+                        <li>Diamante</li>
+                        <li>Grafite</li>
+                        <li>Fulerenos</li>
+                        <li>Nanotubos de carbono</li>
+                    </ul>
+                    <img src="https://rce.casadasciencias.org/static/images/articles/2023-033-01.jpg" alt="Ilustração das formas alotrópicas do carbono" width="400" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Papel no Meio Ambiente</h3>
+                    <p>O carbono é um componente essencial do ciclo do carbono, que envolve a troca de carbono entre a atmosfera, os oceanos, a biosfera e os depósitos geológicos. Este ciclo é crucial para a regulação do clima da Terra e para a manutenção da vida. No entanto, a atividade humana, como a queima de combustíveis fósseis e o desmatamento, tem aumentado as concentrações de carbono na atmosfera, contribuindo para o aquecimento global e as mudanças climáticas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Carbono na Indústria</h3>
+                    <p>O carbono é amplamente utilizado em várias indústrias. Na indústria química, ele é um componente essencial na produção de plásticos, borrachas e outros materiais sintéticos. Na siderurgia, o carbono é adicionado ao ferro para criar aço, um material fundamental para a construção e fabricação. Além disso, o carbono é utilizado na produção de produtos farmacêuticos e na tecnologia de semicondutores.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Impacto na Saúde</h3>
+                    <p>As emissões de carbono, especialmente na forma de dióxido de carbono (CO₂) e poluentes associados, têm um impacto significativo na saúde humana. A poluição do ar resultante da queima de combustíveis fósseis pode causar problemas respiratórios, doenças cardíacas e aumentar a mortalidade. A qualidade do ar é diretamente afetada pelas emissões de carbono, tornando a redução dessas emissões uma prioridade para a saúde pública.</p>
+                </div>
+            </div>
+        </section>
+        <section id="calculadora">
+            <h2>Calculadora de Créditos de Carbono</h2>
+            <button id="personalCalculatorButton" class="button">Calculadora Pessoal</button>
+            <button id="businessCalculatorButton" class="button">Calculadora de Empresa</button>
+
+            <div id="carbonCalculator">
+                <h3>Calcule seus créditos de carbono (Brasil)</h3>
+                <form id="carbonForm">
+                    <label for="electricity">Consumo de Eletricidade (kWh/ano)(mista):</label>
+                    <input type="number" id="electricity" name="electricity" required min="0">
+
+                    <label for="gas">Consumo de Gás de Cozinha (m³/ano):</label>
+                    <input type="number" id="gas" name="gas" required min="0">
+
+                    <label for="car">Quilômetros percorridos de carro (km/ano):</label>
+                    <input type="number" id="car" name="car" required min="0">
+
+                    <label for="fuelType">Tipo de Combustível:</label>
+                    <select id="fuelType" name="fuelType">
+                        <option value="gasoline">Gasolina</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="ethanol">Etanol</option>
+                    </select>
+
+                    <label for="enginePower">Potência do Motor (cv):</label>
+                    <input type="number" id="enginePower" name="enginePower" required min="0">
+
+                    <label for="flights">Número de voos de ida e volta:</label>
+                    <input type="number" id="flights" name="flights" required min="0">
+
+                    <label for="meat">Consumo de carne (kg/semana) (bovina):</label>
+                    <input type="number" id="meat" name="meat" required min="0">
+
+                    <button id="calculateCarbonFootprint" type="button">Calcular Pegada de Carbono</button>
+                    <button id="calculateCarbonCredits" type="button">Calcular Créditos de Carbono</button>
+                </form>
+                <div id="result">
+                    <p id="carbonFootprintResult"></p>
+                    <p id="carbonCreditsResult"></p>
+                </div>
+            </div>
+
+            <div id="businessCalculator">
+                <h3>Calcule os créditos de carbono da sua Empresa</h3>
+                <label for="companySize">Tamanho da empresa:</label>
+                <select id="companySize" name="companySize">
+                    <option value="small">Pequeno</option>
+                    <option value="medium">Médio</option>
+                    <option value="large">Grande</option>
+                </select>
+
+                <label for="companyBranch">Ramo da empresa:</label>
+                <select id="companyBranch" name="companyBranch">
+                    <option value="energy">Energia</option>
+                    <option value="transportation">Transporte</option>
+                    <option value="manufacturing">Indústria Manufatureira e de Processamento</option>
+                    <option value="construction">Construção</option>
+                    <option value="agriculture">Agricultura</option>
+                    <option value="wasteManagement">Gestão de Resíduos</option>
+                </select>
+
+                <div id="commonFields">
+                    <label for="energyConsumptionCommon">Consumo de energia (kWh/ano):</label>
+                    <input type="number" id="energyConsumptionCommon" name="energyConsumptionCommon" required min="0">
+
+                    <label for="wasteGenerationCommon">Geração de resíduos (kg/ano):</label>
+                    <input type="number" id="wasteGenerationCommon" name="wasteGenerationCommon" required min="0">
+                </div>
+
+                <div id="energyFields" style="display: none;">
+                    <label for="energyProduction">Produção de energia (MWh/ano):</label>
+                    <input type="number" id="energyProduction" name="energyProduction" required min="0">
+
+                    <label for="energyTransmission">Transmissão de energia (MWh/ano):</label>
+                    <input type="number" id ="energyTransmission" name="energyTransmission" required min="0">
+
+                    <label for="fuelUse">Uso de combustível (litros/ano):</label>
+                    <input type="number" id="fuelUse" name="fuelUse" required min="0">
+
+                    <label for="emissions">Emissões de CO₂ (toneladas/ano):</label>
+                    <input type="number" id="emissions" name="emissions" required min="0">
+                </div>
+
+                <div id="transportationFields" style="display: none;">
+                    <label for="vehicleFleet">Frota de veículos:</label>
+                    <input type="number" id="vehicleFleet" name="vehicleFleet" required min="0">
+
+                    <label for="fuelConsumption">Consumo de combustível (litros/ano):</label>
+                    <input type="number" id="fuelConsumption" name="fuelConsumption" required min="0">
+
+                    <label for="emissions">Emissões de CO₂ (toneladas/ano):</label>
+                    <input type="number" id="emissions" name="emissions" required min="0">
+                </div>
+
+                <div id="manufacturingFields" style="display: none;">
+                    <label for="productionVolume">Volume de produção (unidades/ano):</label>
+                    <input type="number" id="productionVolume" name="productionVolume" required min="0">
+
+                    <label for="materialUse">Uso de materiais (kg/ano):</label>
+                    <input type="number" id="materialUse" name="materialUse" required min="0">
+                </div>
+
+                <div id="constructionFields" style="display: none;">
+                    <label for="cementUse">Uso de cimento (toneladas/ano):</label>
+                    <input type="number" id="cementUse" name="cementUse" required min="0">
+
+                    <label for="steelUse">Uso de aço (toneladas/ano):</label>
+                    <input type="number" id="steelUse" name="steelUse" required min="0">
+
+                    <label for="woodUse">Uso de madeira (m³/ano):</label>
+                    <input type="number" id="woodUse" name="woodUse" required min="0">
+                </div>
+
+                <div id="agricultureFields" style="display: none;">
+                    <label for="landUse">Uso de terra (ha):</label>
+                    <input type="number" id="landUse" name="landUse" required min="0">
+
+                    <label for="fertilizerUse">Uso de fertilizantes (kg/ano):</label>
+                    <input type="number" id="fertilizerUse" name="fertilizerUse" required min="0">
+
+                    <label for="pesticideUse">Uso de pesticidas (kg/ano):</label>
+                    <input type="number" id="pesticideUse" name="pesticideUse" required min="0">
+                </div>
+
+                <div id="wasteManagementFields" style="display: none;">
+                    <label for="recyclingRate">Taxa de reciclagem (%):</label>
+                    <input type="number" id="recyclingRate" name="recyclingRate" required min="0" max="100">
+                </div>
+
+                <button id="calculateBusinessCarbonFootprint" type="button">Calcular Pegada de Carbono da Empresa</button>
+                <button id="calculateBusinessCarbonCredits" type="button">Calcular Créditos de Carbono da Empresa</button>
+                <div id="businessResult">
+                    <p id="businessCarbonFootprintResult"></p>
+                    <p id="businessCarbonCreditsResult"></p>
+                </div>
+            </div>
+        </section>
+        <section id="ciclo">
+            <h2>Ciclo do Carbono</h2>
+            <p>O ciclo do carbono é o processo pelo qual o carbono é trocado entre a atmosfera, os oceanos, a biosfera terrestre e os depósitos geológicos.</p>
+            <img src="imagens/processos-ciclo-carbono.jpg" alt="Diagrama do ciclo do carbono" width="800" height="600">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Processos-chave</h3>
+                    <ul>
+                        <li>Fotossíntese</li>
+                        <li>Respiração</li>
+                        <li>Decomposição</li>
+                        <li>Dissolução oceânica</li>
+                        <li>Vulcanismo</li>
+                        <li>Atividades humanas</li>
+                    </ul> 
+                </div>
+                <div class="info-card">
+                    <h3>Importância do Ciclo do Carbono</h3>
+                    <p>O ciclo do carbono é crucial para a regulação do clima da Terra e para a manutenção da vida no planeta. Ele influencia a temperatura global, a acidez dos oceanos e a disponibilidade de nutrientes para os ecossistemas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="impacto">
+            <h2>Impacto Ambiental</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Efeito Estufa</h3>
+                    <p>O aumento das concentrações de dióxido de carbono (CO₂) na atmosfera tem intensificado o efeito estufa natural, levando ao aquecimento global.</p>
+                    <img src="imagens/global-warming-347499_1280.webp" alt="Ilustração do efeito estufa" width="400" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Acidificação dos Oceanos</h3>
+                    <p>O aumento do CO₂ atmosférico leva à absorção de mais carbono pelos oceanos, resultando em uma diminuição do pH da água do mar e afetando a vida marinha.</p>
+                    <img src="imagens/stingrays-3966533_960_720.webp" alt="Ilustração da acidificação dos oceanos" width="400" height="300">
+                </div>
+                <div class="info-card">
+                    <h3>Mudanças Climáticas</h3>
+                    <p>As alterações no ciclo do carbono estão contribuindo para mudanças nos padrões climáticos globais, incluindo eventos climáticos extremos mais frequentes.</p>
+                    <img src="imagens/seasons-of-the-year-2019523_1280.webp" alt="Ilustração de mudanças climáticas" width="400" height="300">
+                </div>
+            </div>
+        </section>
+
+        <button id="toggleCharts" class="button">Mostrar Gráficos</button>
+        <section id="dados">
+            <div>
+                <canvas id="co2Chart"></canvas>
+                <h3 id="Emissoes">Emissões Globais de CO₂ por Setor</h3>
+                <canvas id="emissionsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="acoes">
+            <h2>Ações Sustentáveis</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Redução de Energia</h3>
+                    <ul>
+                        <li>Use lâmpadas LED</li>
+                        <li>Desligue aparelhos eletrônicos quando não estiverem em uso</li>
+                        <li>Invista em eletrodomésticos eficientes</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Transporte Sustentável</h3>
+                    <ul>
+                        <li>Use transporte público</li>
+                        <li>Pratique carona compartilhada</li>
+                        <li>Caminhe ou use bicicleta para distâncias curtas</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Consumo Consciente</h3>
+                    <ul>
+                        <li>Reduza o consumo de carne</li>
+                        <li>Compre produtos locais e sazonais</li>
+                        <li>Evite produtos descartáveis</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Educação e Conscientização</h3>
+                    <ul>
+                        <li>Participe de workshops sobre sustentabilidade</li>
+                        <li>Compartilhe informações sobre práticas sustentáveis com amigos e familiares</li>
+                        <li>Incentive a sua comunidade a adotar práticas ecológicas</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Uso de Recursos Naturais</h3>
+                    <ul>
+                        <li>Reduza o uso de água: tome banhos mais curtos e conserte vazamentos</li>
+                        <li>Utilize produtos de limpeza ecológicos</li>
+                        <li>Plante árvores e cuide do meio ambiente local</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Reciclagem</h3>
+                    <ul>
+                        <li>Separe o lixo reciclável do orgânico</li>
+                        <li>Participe de programas de reciclagem na sua comunidade</li>
+                        <li>Reutilize embalagens sempre que possível</li>
+                    </ul>
+                </div>
+            
+            </div>
+        </section>
+    </main>
+    
+    <footer id="footer">
+        <p>&copy; 2023 Carbono: Compreendendo Nossa Pegada. Todos os direitos reservados.</p>
+    </footer>
+    
+    <a href="#" class="scroll-to-top" id="scrollToTop">↑</a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Adiciona evento de clique aos botões de calculadora
+        document.getElementById('personalCalculatorButton').addEventListener ('click', function() {
+            document.getElementById('carbonCalculator').style.display = 'block';
+            document.getElementById('businessCalculator').style.display = 'none';
+        });
+
+        document.getElementById('businessCalculatorButton').addEventListener('click', function() {
+            document.getElementById('carbonCalculator').style.display = 'none';
+            document.getElementById('businessCalculator').style.display = 'block';
+        });
+
+        // Mostra campos específicos para o ramo selecionado
+        document.getElementById('companyBranch').addEventListener('change', function() {
+            const companyBranch = document.getElementById('companyBranch').value;
+            const fieldsToDisplay = document.getElementById(`${companyBranch}Fields`);
+
+            // Oculta todos os campos relacionados a ramos
+            const allFields = document.querySelectorAll('.fields');
+            allFields.forEach(field => {
+                field.style.display = 'none';
+            });
+
+            // Oculta todos os campos específicos para os ramos
+            const allBranchFields = document.querySelectorAll('#energyFields, #transportationFields, #manufacturingFields, #constructionFields, #agricultureFields, #wasteManagementFields');
+            allBranchFields.forEach(field => {
+                field.style.display = 'none';
+            });
+
+            if (fieldsToDisplay) {
+                fieldsToDisplay.style.display = 'block';
+            }
+
+            // Limpa os resultados ao trocar de ramo
+            document.getElementById('businessCarbonFootprintResult').innerHTML = '';
+            document.getElementById('businessCarbonCreditsResult').innerHTML = '';
+            document.getElementById('businessResult').classList.remove('show');
+        });
+
+        // Define o ramo de energia como padrão
+        document.getElementById('companyBranch').value = 'energy';
+        document.getElementById('energyFields').style.display = 'block';
+
+        // Calculadora de Créditos de Carbono
+        document.getElementById('calculateCarbonFootprint').addEventListener('click', function() {
+            const electricity = parseFloat(document.getElementById('electricity').value);
+            const gas = parseFloat(document.getElementById('gas').value);
+            const car = parseFloat(document.getElementById('car').value);
+            const fuelType = document.getElementById('fuelType').value;
+            const enginePower = parseFloat(document.getElementById('enginePower').value);
+            const flights = parseFloat(document.getElementById('flights').value);
+            const meat = parseFloat(document.getElementById('meat').value);
+
+            const carbonFootprint = calculateCarbonFootprint(electricity, gas, car, fuelType, enginePower, flights, meat);
+
+            const carbonFootprintResultElement = document.getElementById('carbonFootprintResult');
+            carbonFootprintResultElement.innerHTML = `Sua pegada de carbono é de ${carbonFootprint.toFixed(2)} toneladas de CO₂.`;
+
+            const resultElement = document.getElementById('result');
+            resultElement.classList.add('show');
+        });
+
+        document.getElementById('calculateCarbonCredits').addEventListener('click', function() {
+            const electricity = parseFloat(document.getElementById('electricity').value);
+            const gas = parseFloat(document.getElementById('gas').value);
+            const car = parseFloat(document.getElementById('car').value);
+            const fuelType = document.getElementById('fuelType').value;
+            const enginePower = parseFloat(document.getElementById('enginePower').value);
+            const flights = parseFloat(document.getElementById('flights').value);
+            const meat = parseFloat(document.getElementById('meat').value);
+
+            const carbonFootprint = calculateCarbonFootprint(electricity, gas, car, fuelType, enginePower, flights, meat);
+            const carbonCredits = calculateCarbonCredits(carbonFootprint);
+
+            const carbonCreditsResultElement = document.getElementById('carbonCreditsResult');
+            carbonCreditsResultElement.innerHTML = `Seus créditos de carbono são de ${carbonCredits.toFixed(2)} toneladas de CO₂.`;
+
+            const resultElement = document.getElementById('result');
+            resultElement.classList.add('show');
+        });
+        function calculateCarbonFootprint(electricity, gas, car, fuelType, enginePower, flights, meat) {
+            const electricityFactor = 0.; // kg CO₂ por kWh
+            const gasFactor = 2.0; // kg CO₂ por m³
+            const carFactor = getCarFactor(fuelType, enginePower); // kg CO₂ por km
+            const flightFactor = 1000; // kg CO₂ por voo de ida e volta
+            const meatFactor = 50; // kg CO₂ por kg de carne
+
+            const totalCO2 = (
+                (electricity * electricityFactor) +
+                (gas * gasFactor) +
+                (car * carFactor) +
+                (flights * flightFactor) +
+                (meat * 52 * meatFactor)
+            ) / 1000; // Convertendo para toneladas
+
+            return totalCO2;
+        }
+
+        function calculateCarbonCredits(carbonFootprint) {
+            // Simula o cálculo dos créditos de carbono com base na pegada de carbono
+            return carbonFootprint * 0.8;
+        }
+
+        function getCarFactor(fuelType, enginePower) {
+            switch (fuelType) {
+                case 'gasoline':
+                    return 0.2 + (enginePower * 0.01); // kg CO₂ por km
+                case 'diesel':
+                    return 0.25 + (enginePower * 0.012); // kg CO₂ por km
+                case 'ethanol':
+                    return 0.15 + (enginePower * 0.008); // kg CO₂ por km
+                default:
+                    return 0; // kg CO₂ por km
+            }
+        }
+
+        // Calculadora de Créditos de Carbono da Empresa
+        document.getElementById('calculateBusinessCarbonFootprint').addEventListener('click', function() {
+            const companySize = document.getElementById('companySize').value;
+            const energyConsumption = parseFloat(document.getElementById('energyConsumptionCommon').value);
+            const wasteGeneration = parseFloat(document.getElementById('wasteGenerationCommon').value);
+            const companyBranch = document.getElementById('companyBranch').value;
+
+            let companyFactor = 0; // Fator de emissão de CO₂ por empresa
+
+            switch (companySize) {
+                case 'small':
+                    companyFactor = 1.5; // kg CO₂ por empresa
+                    break;
+                case 'medium':
+                    companyFactor = 2.5; // kg CO₂ por empresa
+                    break;
+                case 'large':
+                    companyFactor = 4.0; // kg CO₂ por empresa
+                    break;
+                default:
+                    companyFactor = 0; // kg CO₂ por empresa
+            }
+
+            // campos específicos para cada ramo aqui
+            let branchFactor = 0; // Fator de emissão de CO₂ por ramo
+
+            switch (companyBranch) {
+                case 'energy':
+                    branchFactor = getEnergyFactor();
+                    break;
+                case 'transportation':
+                    branchFactor = getTransportationFactor();
+                    break;
+                case 'manufacturing':
+                    branchFactor = getManufacturingFactor();
+                    break;
+                case 'construction':
+                    branchFactor = getConstructionFactor();
+                    break;
+                case 'agriculture':
+                    branchFactor = getAgricultureFactor();
+                    break;
+                case 'wasteManagement':
+                    branchFactor = getWasteManagementFactor();
+                    break;
+                default:
+                    branchFactor = 0; // Fator de emissão de CO₂ por ramo
+            }
+
+            const businessCarbonFootprint = calculateBusinessCarbonFootprint(energyConsumption, wasteGeneration, companyFactor, branchFactor);
+
+            const businessCarbonFootprintResultElement = document.getElementById('businessCarbonFootprintResult');
+            businessCarbonFootprintResultElement.innerHTML = `A pegada de carbono da sua empresa é de ${businessCarbonFootprint.toFixed(2)} toneladas de CO₂.`;
+
+            const businessResultElement = document.getElementById('businessResult');
+            businessResultElement.classList.add('show');
+        });
+
+        document.getElementById('calculateBusinessCarbonCredits').addEventListener('click', function() {
+            const companySize = document.getElementById('companySize').value;
+            const energyConsumption = parseFloat(document.getElementById('energyConsumptionCommon').value);
+            const wasteGeneration = parseFloat(document.getElementById('wasteGenerationCommon').value);
+            const companyBranch = document.getElementById('companyBranch').value;
+
+            let companyFactor = 0; // Fator de emissão de CO₂ por empresa
+
+            switch (companySize) {
+                case 'small':
+                    companyFactor = 1.5; // kg CO₂ por empresa
+                    break;
+                case 'medium':
+                    companyFactor = 2.5; // kg CO₂ por empresa
+                    break;
+                case 'large':
+                    companyFactor = 4.0; // kg CO₂ por empresa
+                    break;
+                default:
+                    companyFactor = 0; // kg CO₂ por empresa
+            }
+            let branchFactor = 0; // Fator de emissão de CO₂ por ramo
+
+            switch (companyBranch) {
+                case 'energy':
+                    branchFactor = getEnergyFactor();
+                    break;
+                case 'transportation':
+                    branchFactor = getTransportationFactor();
+                    break;
+                case 'manufacturing':
+                    branchFactor = getManufacturingFactor();
+                    break;
+                case 'construction':
+                    branchFactor = getConstructionFactor();
+                    break;
+                case 'agriculture':
+                    branchFactor = getAgricultureFactor();
+                    break;
+                case 'wasteManagement':
+                    branchFactor = getWasteManagementFactor();
+                    break;
+                default:
+                    branchFactor = 0; // Fator de emissão de CO₂ por ramo
+            }
+
+            const businessCarbonFootprint = calculateBusinessCarbonFootprint(energyConsumption, wasteGeneration, companyFactor, branchFactor);
+            const businessCarbonCredits = calculateBusinessCarbonCredits(businessCarbonFootprint);
+
+            const businessCarbonCreditsResultElement = document.getElementById('businessCarbonCreditsResult');
+            businessCarbonCreditsResultElement.innerHTML = `Os créditos de carbono da sua empresa são de ${businessCarbonCredits.toFixed(2)} toneladas de CO₂.`;
+
+            const businessResultElement = document.getElementById('businessResult');
+            businessResultElement.classList.add('show');
+        });
+
+        function calculateBusinessCarbonFootprint(energyConsumption, wasteGeneration, companyFactor, branchFactor) {
+            const energyFactor = 0.11; // kg CO₂ por kWh
+            const wasteFactor = 0.5; // kg CO₂ por kg de resíduos
+
+            const totalCO2 = (
+                (energyConsumption * energyFactor) +
+                (wasteGeneration * wasteFactor) +
+                companyFactor +
+                branchFactor
+            ) / 1000; // Convertendo para toneladas
+
+            return totalCO2;
+        }
+
+        function calculateBusinessCarbonCredits(carbonFootprint) {
+            // Simula o cálculo dos créditos de carbono com base na pegada de carbono
+            return carbonFootprint * 0.8;
+        }
+
+        // Funções para calcular fatores de emissão de CO₂ por ramo
+        function getEnergyFactor() {
+            const energyProduction = parseFloat(document.getElementById('energyProduction').value);
+            const energyTransmission = parseFloat(document.getElementById('energyTransmission').value);
+            const fuelUse = parseFloat(document.getElementById('fuelUse').value);
+            const emissions = parseFloat(document.getElementById('emissions').value);
+
+            return (energyProduction * 0.6) + (energyTransmission * 0.4) + (fuelUse * 0.2) + (emissions * 0.1); // kg CO₂ por MWh de produção e transmissão
+        }
+
+        function getTransportationFactor() {
+            const vehicleFleet = parseFloat(document.getElementById('vehicleFleet').value);
+            const fuelConsumption = parseFloat(document.getElementById('fuelConsumption').value);
+            const emissions = parseFloat(document.getElementById('emissions').value);
+
+            return (vehicleFleet * 0.3) + (fuelConsumption * 0.2) + (emissions * 0.1); // kg CO₂ por veículo e litros de combustível
+        }
+
+        function getManufacturingFactor() {
+            const productionVolume = parseFloat(document.getElementById('productionVolume').value);
+            const materialUse = parseFloat(document.getElementById('materialUse').value);
+            
+            return (productionVolume * 0.5) + (materialUse * 0.3); // kg CO₂ por unidade produzida e kg de materiais
+        }
+
+        function getConstructionFactor() {
+            const cementUse = parseFloat(document.getElementById('cementUse').value);
+            const steelUse = parseFloat(document.getElementById('steelUse').value);
+            const woodUse = parseFloat(document.getElementById('woodUse').value);
+
+            return (cementUse * 0.8) + (steelUse * 0.5) + (woodUse * 0.3); // kg CO₂ por toneladas de cimento e aço
+        }
+
+        function getAgricultureFactor() {
+            const landUse = parseFloat(document.getElementById('landUse').value);
+            const fertilizerUse = parseFloat(document.getElementById('fertilizerUse').value);
+            const pesticideUse = parseFloat(document.getElementById('pesticideUse').value);
+
+            return (landUse * 0.5) + (fertilizerUse * 0.2) + (pesticideUse * 0.1); // kg CO₂ por ha e kg de fertilizantes
+        }
+
+        function getWasteManagementFactor() {
+            const recyclingRate = parseFloat(document.getElementById('recyclingRate').value);
+
+            return (recyclingRate * 0.2); // kg CO₂ por % de reciclagem
+        }
+
+        // Dados para os gráficos
+        const co2Data = {
+            labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2020'],
+            datasets: [{
+                label: 'Concentração de CO₂ (ppm)',
+                data: [317, 325, 339, 354, 369, 389, 412],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                tension: 0.1
+            }]
+        };
+
+        const emissionsData = {
+            labels: ['Energia', 'Transporte', 'Indústria', 'Agricultura', 'Edifícios', 'Outros'],
+            datasets: [{
+                label: 'Emissões de CO₂ (Gt)',
+                data: [13.1, 8.0, 8.1, 6.0, 3.0, 1.6],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)'
+                ]
+            }]
+        };
+
+        // Configuração dos gráficos
+        const chartConfig = {
+            type: 'line',
+            data: co2Data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        };
+
+        const emissionsChartConfig = {
+            type: 'pie',
+            data: emissionsData,
+            options: {
+                responsive: true
+            }
+        };
+
+        // Esconde os gráficos ao carregar a página
+        document.getElementById('co2Chart').style.display = 'none';
+        document.getElementById('emissionsChart').style.display = 'none';
+        document.getElementById('Emissoes').style.display= 'none';
+
+        // Adiciona evento de clique ao botão de mostrar/ocultar gráficos
+        document.getElementById('toggleCharts').addEventListener('click', function() {
+            const co2Chart = document.getElementById('co2Chart');
+            const emissionsChart = document.getElementById('emissionsChart');
+
+            if (co2Chart.style.display === 'none') {
+                co2Chart.style.display = 'block';
+                (Emissoes.style.display === 'none') 
+                    Emissoes.style.display = 'block';
+                emissionsChart.style.display = 'block';
+                this.textContent = 'Esconder Gráficos';
+            } else {
+                co2Chart.style.display = 'none';
+                emissionsChart.style.display = 'none';
+                this.textContent = 'Mostrar Gráficos';
+                Emissoes.style.display = 'none';
+            }
+        });
+
+        // Criação dos gráficos
+        const co2Chart = new Chart(document.getElementById('co2Chart'), chartConfig);
+        const emissionsChart = new Chart(document.getElementById('emissionsChart'), emissionsChartConfig);
+
+        // Animação de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Botão de voltar ao topo
+        const scrollToTopButton = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animação de entrada das seções
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
